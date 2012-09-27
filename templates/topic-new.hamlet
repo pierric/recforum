@@ -1,0 +1,4 @@
+<form method=post action=@{NewTopicR} enctype=#{formEnctype}>
+   ^{formWidget}
+   <input type="submit" value="Save">
+<div .clear>

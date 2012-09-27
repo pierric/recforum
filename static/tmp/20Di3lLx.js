@@ -1,0 +1,1 @@
+function cancel(){alert("Hello");$.getJSON("http://192.168.56.101:3000/punlock/7",null,function(e){alert(e)});alert("World")};$("#btnParagraphModCancel").click(cancel)

@@ -1,0 +1,1 @@
+function cancel(){};$("#btnParagraphModCancel").click(cancel)

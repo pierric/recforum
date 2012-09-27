@@ -1,0 +1,12 @@
+function cancel() {
+    $.getJSON("@{UnlockParagraphR pid}",null,
+        function(e) {
+            window.location.assign("@{ViewArticleR (paragraphArticle parag)}");
+        });
+}
+$("#btnParagraphSave").click(function() {
+    $("form").submit();
+});
+$("#btnParagraphModCancel").click(cancel);
+$("#btnParagraphCancel").click(cancel);
+$(window).unload(cancel);

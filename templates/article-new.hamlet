@@ -1,0 +1,4 @@
+<form method=post action=@{NewArticleR topicId} enctype=#{encType}>
+   ^{widget}
+   <input type="submit" value="Save">
+<div .clear>

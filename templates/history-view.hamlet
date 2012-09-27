@@ -1,0 +1,29 @@
+<div id="historyHdr" .header>
+    <h1>
+        #{articleTitle article}
+        <span>Paragraph #{show index}
+    <div .clear>
+<div id="historyOps">
+    <a .button href=@{ViewArticleR aid}>Back to the article
+    <a .button .disabled href="#" id="btnCompare">Compare
+<div id="historyBody">
+    <table id="changeList" width="80%">
+        <tr>
+            <th>
+            <th id="tblVer">Version
+            <th id="tblOwr">Owner
+            <th id="tblMod">Last Modified
+            <th id="tblSmy">Summary
+        $forall (versionIdent, versionEntity, chgOwner) <- histEntries
+            <tr>
+                $with value <- entityVal versionEntity
+                    <td>
+                        <input type=checkbox id=#{versionIdent}>
+                    <td .index>
+                        <a href=@{ViewParagraphR aid (paragraphOindex value) (paragraphVersion value)}>
+                            #{paragraphVersion value}
+                    <td .user><a href=@{ViewUserR $ fst chgOwner}>#{snd chgOwner}
+                    <td .datetime>
+                        <a href=@{ViewParagraphR aid (paragraphOindex value) (paragraphVersion value)}>
+                            #{tfmt $ paragraphCreated value}
+                    <td .summary>#{fromMaybe "" $ paragraphSummary value}

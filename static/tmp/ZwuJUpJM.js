@@ -1,0 +1,2 @@
+var allCB=new Array();allCB.push({"ident":"#h2","pid":"2"});allCB.push({"ident":"#h3","pid":"3"});allCB.push({"ident":"#h4","pid":"5"});allCB.push({"ident":"#h5","pid":"6"});allCB.push({"ident":"#h6","pid":"7"});allCB.push({"ident":"#h7","pid":"8"})
+function select(){alert("S")}

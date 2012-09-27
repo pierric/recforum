@@ -1,0 +1,25 @@
+label {
+    margin-right: 4px;
+}
+label[for="topicTit"] {
+    display: inline;
+}
+#topicTit {
+    width: 435px;
+}
+label[for="topicPvt"] {
+    display: inline;
+}
+#topicDsc {
+    width: 500px;
+    height: 10em;
+}
+label[for="topicDft"] {
+    display: inline;
+}
+input[type="submit"] {
+    margin: 2px 0px;
+}
+.clear {
+    clear: both;
+}

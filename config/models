@@ -1,0 +1,53 @@
+User
+    ident Text
+    UniqueUser ident
+Topic
+    owner    UserId
+    created  UTCTime
+    modified UTCTime
+    draft    Bool
+    private  Bool
+    title    Text
+    descr    Html
+Article
+    topic    TopicId
+    owner    UserId
+    created  UTCTime
+    modified UTCTime
+    draft    Bool
+    private  Bool
+    title    Text
+    descr    Html
+    maxo     Int
+Paragraph
+    owner     UserId
+    created   UTCTime
+    content   Text
+    summary   Text Maybe 
+    article   ArticleId
+    oindex    Int           -- index within the artile
+    cindex    Int           -- define the current order of paragraphs
+    version   Int           
+    active    Bool
+    UniqueParagraphV article oindex version
+    deriving Show
+Lock
+    paragraph ParagraphId
+    user      UserId
+    time      UTCTime
+    UniqueLock paragraph
+Post
+    owner   UserId
+    created UTCTime
+    follow  PostId Maybe
+    heat    Int
+    content Text
+PostTopicJoin
+    post    PostId
+    topic   TopicId
+PostArticleJoin
+    post    PostId
+    article TopicId
+PostParagraphJoin
+    post      PostId
+    paragraph ParagraphId

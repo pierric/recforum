@@ -1,0 +1,48 @@
+<div id="articleHdr" .header>
+    <h1>#{articleTitle article}
+        $if authorized
+            <a href="#" .button id="btnArticleMod">modify
+    $if authorized
+        $with desc <- articleDescr article
+            <p>#{desc}
+        <div id="articleMod">
+            <div>
+                <form method=post action=@{ModArticleR articleId} enctype=#{modEncType}>
+                    ^{modWidget}
+                    <input type="submit" value="Save">
+                    <input type="button" value="Cancel" id="btnArticleModCancel">
+            <div .clear>
+<div id="articleOps">
+    <a .button href=@{ViewTopicR (articleTopic article)}>Back to the Topic
+    <a .button id="btnParagraphNew" href=@{NewParagraphR articleId 0}>New Paragraph
+
+<div id="articleBody">
+    <div id="movPanel">
+        <div id="movBody">
+            <form method=post action=@{MovParagraphR} enctype=#{movEncType}>
+                ^{movWidget}
+                <input type="submit" value="Save">
+                <input type="button" value="Cancel" id="btnArticleMovCancel">
+        <div .clear>
+    $forall (paragraphEntity, ownerEntity) <- paragraphList
+        $with paragraph <- entityVal paragraphEntity
+            <div .paragraph :isDraft:.draft :isPrivate:.private>
+                <div .content>#{renderMarkdown (markdown $ paragraphContent paragraph)}
+                <span .paragraphOps>
+                    <a .button .btnParagraphInsert href=@{NewParagraphR articleId (paragraphCindex paragraph + 1)}>Insert After
+                    <a .button .btnParagraphEdit   href=@{ModParagraphR (entityKey paragraphEntity)}>Edit
+                    <a .button .btnParagraphDelete href=@{DelParagraphR (entityKey paragraphEntity)}>Delete
+                    <a .button .btnParagraphMov    href="#" paragraph="#{toPathPiece $ unKey $ entityKey paragraphEntity}">Move
+                    <a .button .btnParagraphChg    href=@{HistParagraphR (entityKey paragraphEntity)}>History
+                $with (ownerId, ownerNm) <- ownerEntity
+                    <span .info>
+                        By
+                        <a href=@{ViewUserR ownerId}>#{ownerNm}
+                        at: #{tfmt (paragraphCreated paragraph)}
+                <div .clear>
+
+<div id="contributors">
+    <div>Contributors
+    $forall (uid,unm) <- contributorList
+        <a href=@{ViewUserR uid}>#{unm}
+<div .clear>

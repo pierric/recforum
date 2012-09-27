@@ -1,0 +1,28 @@
+/static StaticR Static getStatic
+/auth   AuthR   Auth   getAuth
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET
+
+/tnew                  NewTopicR       GET POST
+/tview/#TopicId        ViewTopicR      GET
+/tmod/#TopicId         ModTopicR       POST
+
+/anew/#TopicId                      NewArticleR      GET POST
+/aview/#ArticleId                   ViewArticleR     GET
+/amod/#ArticleId                    ModArticleR      POST
+/pnew/#ArticleId/#Int               NewParagraphR    GET POST
+/pmov                               MovParagraphR    POST
+/pmod/#ParagraphId                  ModParagraphR    GET POST
+/pdel/#ParagraphId                  DelParagraphR    POST
+/pview/#ArticleId/#Int/#Int         ViewParagraphR   GET
+/phist/#ParagraphId                 HistParagraphR   GET
+/pcomp/#ParagraphId/#ParagraphId    HistCompareR     GET
+/punlock/#ParagraphId               UnlockParagraphR GET
+
+/user/#UserId               ViewUserR       GET
+
+/error                      ErrorR          GET
+/unavailable                UnavailableR    GET

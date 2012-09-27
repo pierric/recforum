@@ -1,0 +1,11 @@
+#paragraphBody {
+    margin: 1em 0px;
+}
+#paragraphBody textarea {
+    width: 80%;
+    height: 400px;
+}
+#paragraphBody #summary {
+    width: 80%;
+    margin: 8px 0px;
+}

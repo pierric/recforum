@@ -1,0 +1,15 @@
+<div id="paragraphHdr" .header>
+    <h1>#{articleTitle article}
+    <div .clear>
+<div id="paragraphOps">
+    <a .button href=@{ViewArticleR aid}>Back to the article
+    <a .button id="btnParagraphSave"    href="#">Save
+    <a .button id="btnParagraphCancel"  href="#">Cancel
+    <a .button id="btnParagraphPreview" href="#">Preview
+
+<div id="paragraphBody">
+    <form method=post action=@{NewParagraphR aid cindex} enctype=#{encType}>
+        ^{widget}
+        <input type="submit" value="Save">
+        <input type="button" value="Cancel" id='btnArticleMovCancel>
+

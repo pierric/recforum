@@ -1,0 +1,20 @@
+Default: &defaults
+  database: Recursive.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: Recursive_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: Recursive_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: Recursive_production.sqlite3
+  poolsize: 100
+  <<: *defaults

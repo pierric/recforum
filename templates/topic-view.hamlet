@@ -1,0 +1,34 @@
+<div id="topicHdr" .header>
+    <h1>#{topicTitle topic}
+        <a href="#" .button id="btnTopicMod">modify
+    <div .clear>
+    <p>#{topicDescr topic}
+<div id="topicMod">
+    <div>
+        <form method=post action=@{ModTopicR topicId} enctype=#{modEncType}>
+            ^{modWidget}
+            <input type="submit" value="Save">
+            <input type="button" value="Cancel" id="btnTopicModCancel">
+    <div style="clear:both">
+<div id="articleList">
+    $if null articleList
+        <p id="articleListEmpty">_{MsgArticleListEmpty}
+            <a .button href=@{NewArticleR topicId}>New Article
+    $else
+        <div id="actions">
+            <a .button href=@{NewArticleR topicId}>New Article
+        $forall article <- zip articleList articleOwnerList
+            $with aBody  <- entityVal (fst article)
+                $with aOwner <- snd article
+                    <div .article :articleDraft aBody:.articleDft :articlePrivate aBody:.articlePvt>
+                        <div .articleTit>
+                            <a href=@{ViewArticleR (entityKey (fst article))}>#{articleTitle aBody}
+                        <div .articleOps>
+                            <a .button id="btnArticleMod">Modify
+                            <a .button id="btnArticleDel">Delete
+                            <a .button id="btnArticleMov">Move
+                        <div .articleDsc>#{articleDescr aBody}
+                        <div .articleInf>
+                            By #
+                            <a href="#" .user>
+                                #{aOwner}

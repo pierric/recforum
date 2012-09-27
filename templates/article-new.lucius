@@ -1,0 +1,25 @@
+label {
+    margin-right: 4px;
+}
+label[for="articleTit"] {
+    display: inline;
+}
+#articleTit {
+    width: 435px;
+}
+label[for="articlePvt"] {
+    display: inline;
+}
+#articleDsc {
+    width: 500px;
+    height: 10em;
+}
+label[for="articleDft"] {
+    display: inline;
+}
+input[type="submit"] {
+    margin: 2px 0px;
+}
+.clear {
+    clear: both;
+}

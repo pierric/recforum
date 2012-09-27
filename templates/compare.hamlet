@@ -1,0 +1,21 @@
+<div id="compareHdr" .header>
+    <h1>
+        #{articleTitle article}
+        <span>
+            Paragraph #{show index}
+    <div .clear>
+    <p>
+        Compare #
+        <b>Version #{paragraphVersion p2} #
+        to #
+        <b>Version #{paragraphVersion p1}
+<div id="compareOps">
+    <a .button href=@{HistParagraphR pid2}>Back to the history
+<div id="compareBody">
+    <table width="90%">
+        <tr>
+            <th width="50%">
+                Version #{paragraphVersion p1}
+            <th width="50%">
+                Version #{paragraphVersion p2}
+        ^{widget}

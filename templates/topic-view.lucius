@@ -1,0 +1,59 @@
+a, a:visited {
+    color: rgb(63, 119, 211);
+    font-weight: bold;
+}
+#btnTopicMod {
+    float: right;
+    line-height: 12px;
+}
+#topicMod {
+    border: 1px dashed rgb(204, 204, 204);
+    border-radius: 3px 3px 3px 3px;
+    padding: 2px 4px;
+    width: 505px;
+    display: none;
+}
+label {
+    margin-right: 4px;
+}
+label[for="topicTit"] {
+    display: inline;
+}
+#topicTit {
+    width: 435px;
+}
+label[for="topicPvt"] {
+    display: inline;
+}
+#topicDsc {
+    width: 500px;
+    height: 10em;
+}
+label[for="topicDft"] {
+    display: inline;
+}
+input[type="submit"], input[type="button"] {
+    margin: 2px 8px;
+}
+.article {
+    border-bottom: 1px dotted rgb(153, 153, 153);
+    margin-top: 4px;
+    padding: 2px 4px;
+}
+.articlePvt .articleTit a {
+    color: red;
+}
+.articleDft .articleTit a {
+    color: red;
+}
+.articlePvt .articleDft .articleTit a {
+    color: red;
+}
+.articleTit {
+    font-weight: bold;
+}
+.articleInf {
+    line-height: 10px;
+    text-align: right;
+}
+

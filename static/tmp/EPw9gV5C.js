@@ -1,0 +1,1 @@
+function cancel(){$.getJSON("http://192.168.56.101:3000/punlock/7",null,function(e){alert($(window.location));$(window.location).href="http://192.168.56.101:3000/aview/1"})};$("#btnParagraphSave").click(function(){$("form").submit()});$("#btnParagraphModCancel").click(cancel);$("#btnParagraphCancel").click(cancel);$(window).unload(cancel)

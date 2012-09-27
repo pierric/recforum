@@ -1,0 +1,8 @@
+function cancel() {
+    window.location.assign("@{ViewArticleR aid}");
+}
+$("#btnParagraphSave").click(function() {
+    $("form").submit();
+});
+$("#btnParagraphModCancel").click(cancel);
+$("#btnParagraphCancel").click(cancel);

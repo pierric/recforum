@@ -1,0 +1,7 @@
+<div id="paragraphHdr" .header>
+    <h1>#{articleTitle article}
+    <p>Paragraph #{show index}
+<div id="paragraphOps">
+    <a .button href=@{HistParagraphR pid}>Back to the change history
+<div id="paragraphBody">
+    #{renderMarkdown (markdown (paragraphContent parag))}
